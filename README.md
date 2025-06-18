@@ -11,8 +11,8 @@ Once the user has built the visualization they can either review it via the web 
 ![](https://github.com/nickmmark/hyponatremia-glideslope/blob/main/sodium_correction_v1.gif)
 
 ### Implementation
-Uses [luxon.js](https://moment.github.io/luxon/#/) for handling date/times and [chart.js](https://www.chartjs.org/docs/latest/charts/line.html) for display
-Uses [the Asynchronous Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) for pasting and the [window.print function](https://developer.mozilla.org/en-US/docs/Web/API/Window/print) for printing or export to PDF.
+- Uses [luxon.js](https://moment.github.io/luxon/#/) for handling date/times and [chart.js](https://www.chartjs.org/docs/latest/charts/line.html) for displaying the results. It uses the Luxon [Chart.js adapter](https://github.com/chartjs/chartjs-adapter-luxon) for easy interoperability between the two.
+- Uses [the Asynchronous Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) for pasting and the [window.print function](https://developer.mozilla.org/en-US/docs/Web/API/Window/print) for printing or export to PDF.
 
 ### Features to Add
 It would be helpful to add therapies on the graph, for example:
@@ -21,7 +21,7 @@ It would be helpful to add therapies on the graph, for example:
 - when was ddAVP given --> show the expected half life of the drug
 
 ### Limitations
-Although the original reports of osmotic demyelination syndrome suggested that rapid correction of sodium (>12 mEq/L/day) 
+Although the original reports of osmotic demyelination syndrome suggested that rapid correction of sodium (>12 mEq/L/day) more recent studies suggest that ODS can occur with slower rates of correction.
 Even patients with relatively slow correction of hyponatremia can develop CPM/ODS.
 https://evidence.nejm.org/doi/full/10.1056/EVIDoa2300107
 https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215
