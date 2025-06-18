@@ -15,10 +15,16 @@ Once the user has built the visualization they can either review it via the web 
 - Uses [the Asynchronous Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) for pasting and the [window.print function](https://developer.mozilla.org/en-US/docs/Web/API/Window/print) for printing or export to PDF.
 
 ### 🚧 Features to Add
-It would be helpful to add therapies on the graph, for example:
+[ ] It would be helpful to add therapies on the graph, for example:
 - when was saline or free water given & how much
 - ideally I could add a weight based calculator to *estimate* how much a given free water bolus would be expected to decrease the sodium
 - when was ddAVP given --> show the expected half life of the drug
+
+[ ] Make it possible to save the graph or share with someone else
+- would need to persist the data (e.g. on a server) and have a login
+- alternatively could have a "share" button that included the data in the hyperlink?
+
+[ ] Add a watermark to the graph
 
 ### ⚠️ Limitations
 Although the original reports of osmotic demyelination syndrome suggested that rapid correction of sodium (>12 mEq/L/day) more recent studies suggest that ODS can occur with slower rates of correction.
