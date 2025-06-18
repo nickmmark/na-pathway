@@ -11,12 +11,22 @@ The user can use the default rate of sodium correction (6-8 mEq/L/day), a more c
 Uses [luxon.js](https://moment.github.io/luxon/#/) for handling date/times and [chart.js](https://www.chartjs.org/docs/latest/charts/line.html) for display
 Uses [the Asynchronous Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) for pasting and the [window.print function](https://developer.mozilla.org/en-US/docs/Web/API/Window/print) for printing or export to PDF.
 
+### Features to Add
+It would be helpful to add therapies on the graph, for example:
+- when was saline or free water given & how much
+- ideally I could add a weight based calculator to *estimate* how much a given free water bolus would be expected to decrease the sodium
+- when was ddAVP given --> show the expected half life of the drug
+
 ### Limitations
+Although the original reports of osmotic demyelination syndrome suggested that rapid correction of sodium (>12 mEq/L/day) 
 Even patients with relatively slow correction of hyponatremia can develop CPM/ODS.
 https://evidence.nejm.org/doi/full/10.1056/EVIDoa2300107
-
+https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215
 
 ### License
 MIT License - free to reuse (including commercially) but please acknowledge where you got it!
 
-###
+### References
+Original report of Osmotic Demyelination Syndrome
+https://www.nejm.org/doi/abs/10.1056/NEJM198606123142402
+
