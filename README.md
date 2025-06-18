@@ -6,6 +6,8 @@ Hyponatremia is a common but potentially serious electrolyte disturbance among h
 ### Solution
 The patient's sodium values are displayed in an xy plot versus time. The safe rate of correction is shown as a ***glideslope***. The user can add more sodium values and see if they within the safe rate of correction. Values outside the safe correction range are highlighted. 
 The user can use the default rate of sodium correction (6-8 mEq/L/day), a more cautious rate (4-6 mEq/L/day), a more aggressive rate (8-10 mEq/L/day), or even customize the rate.
+Once the user has built the visualization they can either review it via the web app, copy it to the clipboard (to paste into the EHR), or print it out.
+
 ![](https://github.com/nickmmark/hyponatremia-glideslope/blob/main/sodium_correction_v1.gif)
 
 ### Implementation
