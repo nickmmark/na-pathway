@@ -15,10 +15,9 @@ Once the user has built the visualization they can either review it via the web 
 - Uses [the Asynchronous Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) for pasting and the [window.print function](https://developer.mozilla.org/en-US/docs/Web/API/Window/print) for printing or export to PDF.
 
 ### ⚠️ Limitations
-Although the original reports of osmotic demyelination syndrome suggested that rapid correction of sodium (>12 mEq/L/day) more recent studies suggest that ODS can occur with slower rates of correction.
-Even patients with relatively slow correction of hyponatremia can develop CPM/ODS.
-https://evidence.nejm.org/doi/full/10.1056/EVIDoa2300107
-https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215
+Although the [original report of osmotic demyelination syndrome](https://www.nejm.org/doi/abs/10.1056/NEJM198606123142402) suggested that the cause was **rapid** correction of sodium (>12 mEq/L/day) more recent studies suggest that ODS can occur with slower rates of correction. In a [cohort described by Seethapathy _et al_](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2300107), CPM occured in 5 of 7 patients despite correcting sodiuma at a slower rate (<8 mEq/L/day).
+Even patients with relatively slow correction of hyponatremia can develop CPM/ODS. A larger [multi-center observational study by MacMillan et al](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215) found that 7/12 patients who developed CPM did not have rapid correction. Thus, extremely cautious rates of sodium correction (e.g. <6 mEq/L/day) may be warranted in high risk patients. 
+
 
 ### 🚧 Features to Add
 [ ] It would be helpful to add therapies on the graph, for example:
