@@ -26,10 +26,14 @@ Even patients with relatively slow correction of hyponatremia can develop CPM/OD
 - when was ddAVP given --> show the expected half life of the drug
 
 [ ] Make it possible to save the graph or share with someone else
-- would need to persist the data (e.g. on a server) and have a login
-- alternatively could have a "share" button that included the data in the hyperlink?
+- one approach would be to persist the data (e.g. on a server) and have a login or direct link
+- alternatively could have a "share" button that included the data in the hyperlink itself?
 
 [ ] Add a watermark to the graph
+
+[ ] Ideally this would be integrated into the EHR so the user wouldn't have to do any data entry.
+- this could pull lots of additional data --> therapeutics given, urine output, other labs, etc
+- this is really where this app needs to go ultimately & why I've made it open source under an MIT license
 
 ### 🪪 License
 MIT License - free to reuse (including commercially) but please acknowledge where you got it!
