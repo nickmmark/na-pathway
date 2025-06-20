@@ -7,6 +7,8 @@ Hyponatremia is a common but potentially serious electrolyte disturbance among h
 The patient's sodium values are displayed in an xy plot versus time. The safe rate of correction is shown as a ***glideslope***. The user can add more sodium values and see if they within the safe rate of correction. Values outside the safe correction range are highlighted. 
 The user can use the default rate of sodium correction (6-8 mEq/L/day), a more cautious rate (4-6 mEq/L/day), a more aggressive rate (8-10 mEq/L/day), or even customize the rate.
 Once the user has built the visualization they can either review it via the web app, copy it to the clipboard (to paste into the EHR), or print it out.
+The user can also indicate when treatments such as D5W, Normal Saline, 3% saline, or ddAVP are administered. These are also shown on the graph.
+Finally, the user can paste the results graph into the medical record or print it out, so everyone on the team has shared mental model about the plan for safe sodium correction.
 
 ![](https://github.com/nickmmark/hyponatremia-glideslope/blob/main/sodium_correction_v1.gif)
 
@@ -20,8 +22,8 @@ Even patients with relatively slow correction of hyponatremia can develop CPM/OD
 
 
 ### 🚧 Features to Add
-[ ] It would be helpful to add therapies on the graph, for example:
-- when was saline or free water given & how much
+[x] Add therapies (d5W, 3% NS, ddAVP, etc)
+[ ] Add more info about therapies on the graph, for example:
 - ideally I could add a weight based calculator to *estimate* how much a given free water bolus would be expected to decrease the sodium
 - when was ddAVP given --> show the expected half life of the drug
 
