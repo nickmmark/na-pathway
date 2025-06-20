@@ -21,9 +21,9 @@ Although the [original report of osmotic demyelination syndrome](https://www.nej
 Even patients with relatively slow correction of hyponatremia can develop CPM/ODS. A larger [multi-center observational study by MacMillan et al](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215) found that 7/12 patients who developed CPM did not have rapid correction. Thus, extremely cautious rates of sodium correction (e.g. <6 mEq/L/day) may be warranted in high risk patients. 
 
 ### 🔢 Versions
-1.0 first working version - features sodium graph, variable rates of correction, 
-1.1 added ability to print, save, copy the graph
-2.0 added therapies
+- 1.0 first working version - features sodium graph with variable rates of correction
+- 1.1 added ability to print, save, & copy the graph
+- 2.0 added basic therapies
 
 ### 🚧 Features to Add
 [x] Add therapies (d5W, 3% NS, ddAVP, etc)
@@ -41,7 +41,7 @@ Even patients with relatively slow correction of hyponatremia can develop CPM/OD
 - this could pull lots of additional data --> therapeutics given, urine output, other labs, etc
 - this is really where this app needs to go ultimately & why I've made it open source under an MIT license
 
-[ ] Need a better name!
+[ ] Need a better name! 
 
 ### 🪪 License
 MIT License - free to reuse (including commercially) but please acknowledge where you got it!
