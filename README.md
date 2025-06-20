@@ -1,4 +1,4 @@
-# hyponatremia-glideslope
+# NaPathway: A tool for safely correcting hyponatremia
 
 ### 🏥 Medical Context
 Hyponatremia is a common but potentially serious electrolyte disturbance among hospitalized patients. Correcting hyponatremia too rapidly can lead to serious complications such as [Central pontine myelinolysis (CPM)](https://en.wikipedia.org/wiki/Central_pontine_myelinolysis) and Osmotic Demyelination Syndrome (ODS). Avoiding these complications requires careful monitoring and titration of therapies. One challenge is defining precise sodium correction goals and determining if the correction is occuring as intended. This is fundamentally a data visualization problem, that can be solved with an interactive web-app.
@@ -40,8 +40,6 @@ Even patients with relatively slow correction of hyponatremia can develop CPM/OD
 [ ] Ideally this would be integrated into the EHR so the user wouldn't have to do any data entry.
 - this could pull lots of additional data --> therapeutics given, urine output, other labs, etc
 - this is really where this app needs to go ultimately & why I've made it open source under an MIT license
-
-[ ] Need a better name! 
 
 ### 🪪 License
 MIT License - free to reuse (including commercially) but please acknowledge where you got it!
