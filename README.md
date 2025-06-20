@@ -35,6 +35,8 @@ Even patients with relatively slow correction of hyponatremia can develop CPM/OD
 - this could pull lots of additional data --> therapeutics given, urine output, other labs, etc
 - this is really where this app needs to go ultimately & why I've made it open source under an MIT license
 
+[ ] Need a better name!
+
 ### 🪪 License
 MIT License - free to reuse (including commercially) but please acknowledge where you got it!
 
@@ -42,4 +44,3 @@ MIT License - free to reuse (including commercially) but please acknowledge wher
 - Sterns RH _et al_, [*Osmotic demyelination syndrome following correction of hyponatremia*](https://www.nejm.org/doi/abs/10.1056/NEJM198606123142402) _NEJM_ 1986 Jun 12;314(24):1535-42. - Original report of describing Osmotic Demyelination Syndrome
 - MacMillan TE _et al_, [Osmotic Demyelination Syndrome in Patients Hospitalized with Hyponatremia](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215). _NEJM Evidence_ 2023 Apr;2(4):EVIDoa2200215
 - Seethapathy H _et al_, [Severe Hyponatremia Correction, Mortality, and Central Pontine Myelinolysis.](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2300107) _NEJM Evidence_ 2023 Oct;2(10):EVIDoa2300107
-
