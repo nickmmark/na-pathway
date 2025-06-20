@@ -51,7 +51,7 @@
   </table>
   <button class="btn" id="addMeasurementBtn">+ Add Measurement</button>
   <div style="margin-top: 10px;">
-    <button class="btn" id="plotGraphBtn">Plot Graph</button>
+    <button class="btn" id="saveGraphBtn">Save Graph</button></button>
     <button class="btn" id="copyBtn">Copy Graph</button>
     <button class="btn" id="printBtn">Print Graph</button>
   </div>
@@ -67,7 +67,7 @@
       const rateSelect = document.getElementById('correctionRate');
       const customContainer = document.getElementById('customRateContainer');
       const addBtn = document.getElementById('addMeasurementBtn');
-      const plotBtn = document.getElementById('plotGraphBtn');
+      const saveBtn = document.getElementById('saveGraphBtn');
       const copyBtn = document.getElementById('copyBtn');
       const printBtn = document.getElementById('printBtn');
 
@@ -201,7 +201,17 @@
       }
 
       // Button handlers
-      plotBtn.addEventListener('click', updateGraph);
+      saveBtn.addEventListener('click', () => {
+        const canvas = document.getElementById('sodiumChart');
+        canvas.toBlob(blob => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'sodium_correction_chart.png';
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      });
       copyBtn.addEventListener('click', async () => {
         const blob = await new Promise(res => document.getElementById('sodiumChart').toBlob(res));
         try { await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]); alert('Graph copied'); }
