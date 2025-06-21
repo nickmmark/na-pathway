@@ -53,18 +53,20 @@ Practically, we can surface the ***expected change in sodium*** as a property of
 
 
 ### ⚠️ Limitations
+#### Sodium does not fully explain ODS risk
 Although the [original report of osmotic demyelination syndrome](https://www.nejm.org/doi/abs/10.1056/NEJM198606123142402) suggested that the cause was **rapid** correction of sodium (>12 mEq/L/day) more recent studies suggest that ODS can occur with slower rates of correction. In a [cohort described by Seethapathy _et al_](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2300107), CPM occured in 5 of 7 patients despite correcting sodiuma at a slower rate (<8 mEq/L/day).
 Even patients with relatively slow correction of hyponatremia can develop CPM/ODS. A larger [multi-center observational study by MacMillan et al](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215) found that 7/12 patients who developed CPM did not have rapid correction. Thus, extremely cautious rates of sodium correction (e.g. <6 mEq/L/day) may be warranted in high risk patients. 
 
+#### Changes in endogenous ADH can lead to over-correction
+Frequently, patient present with hyponatremia in the setting of high ***endogenous*** ADH levels (for example with hypovolemia). Following volume resuscitation, the endogenous ADH levels drop and the sodium can rise rapidly, potentially causing dangerously rapid overocorrection. For this reason ***exogenous*** ADH can be administered in the form of ddAVP to blunt the rapid rise in sodium when endogenous ADH falls. This apporach is termed the ***ddAVP clamp***.
 
 
 ### 🔢 Versions
 - 1.0 first working version - features sodium graph with variable rates of correction
 - 1.1 added ability to print, save, & copy the graph
 - 2.0 added basic therapies
+- 3.0 implemented calculations of TBW and expected change in serum sodium
 
-
-<Br>
 
 ### 🚧 Features to Add
 [x] Add therapies (d5W, 3% NS, ddAVP, etc)
@@ -83,12 +85,12 @@ Even patients with relatively slow correction of hyponatremia can develop CPM/OD
 - this could pull lots of additional data --> therapeutics given, urine output, other labs, etc
 - this is really where this app needs to go ultimately & why I've made it open source under an MIT license
 
-<Br>
 
 
 ### 🪪 License
 NaPathway is released under an [MIT License](https://opensource.org/license/mit) - free to reuse (including commercially) but please acknowledge where you got it!
-<Br>
+
+
 
 ### 📚 References
 - Sterns RH _et al_, [*Osmotic demyelination syndrome following correction of hyponatremia*](https://www.nejm.org/doi/abs/10.1056/NEJM198606123142402) _NEJM_ 1986 Jun 12;314(24):1535-42. - Original report of describing Osmotic Demyelination Syndrome
