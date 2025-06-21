@@ -25,7 +25,7 @@ The coefficient (C) used to estimate TBW depends on age, gender, and weight:
 - Adult females and elderly males: 0.5 * body weight (in kg)
 - Elderly females: 0.45 * body weight (in kg)
 
-(Note that there are more accurate anthropometric equations that use height, weight, age, and gender. I have chosen to use the simpler approximation because height data is not always available. Ideally, if this was connected to the EHR, the app would use the better formula if more information was available.)
+Note that there are more accurate anthropometric equations - like the [Watson Formula](https://pubmed.ncbi.nlm.nih.gov/6986753/) - that use height, weight, age, and gender. I have chosen to use the simpler approximation because height data is not always available. Ideally, if this was connected to the EHR, the app would use the better formula if more information was available.
 
 In order to calculate the **expected change in sodium**, we also need to consider the sodium content of different intravenous fluid solutions:
 - 0.9% saline = 154 mEq/L
@@ -79,15 +79,16 @@ Frequently, patient present with hyponatremia in the setting of high ***endogeno
 ### 🚧 Features to Add
 [x] Add therapies (d5W, 3% NS, ddAVP, etc)
 
-[ ] Add more info about therapies on the graph, for example:
+[x] Add more info about therapies on the graph, for example:
 - ideally I could add a weight based calculator to *estimate* how much a given free water bolus would be expected to decrease the sodium
 - when was ddAVP given --> show the expected half life of the drug
 
-[ ] Make it possible to save the graph or share with someone else
+[ ] Make it possible to easily share the graph with someone else
 - one approach would be to persist the data (e.g. on a server) and have a login or direct link
 - alternatively could have a "share" button that included the data in the hyperlink itself?
 
 [ ] Add a watermark to the graph
+- always good to be be transparent about the source! also helps others find the app.
 
 [ ] Ideally this would be integrated into the EHR so the user wouldn't have to do any data entry.
 - this could pull lots of additional data --> therapeutics given, urine output, other labs, etc
@@ -98,6 +99,7 @@ Frequently, patient present with hyponatremia in the setting of high ***endogeno
 
 ### 🪪 License
 NaPathway is released under an [MIT License](https://opensource.org/license/mit) - free to reuse (including commercially) but please acknowledge where you got it!
+It's my sincere hope that people **will** steal this code and use it to deploy within thier own EHR. 
 
 <br><br>
 
@@ -105,3 +107,4 @@ NaPathway is released under an [MIT License](https://opensource.org/license/mit)
 - Sterns RH _et al_, [*Osmotic demyelination syndrome following correction of hyponatremia*](https://www.nejm.org/doi/abs/10.1056/NEJM198606123142402) _NEJM_ 1986 Jun 12;314(24):1535-42. - Original report of describing Osmotic Demyelination Syndrome
 - MacMillan TE _et al_, [Osmotic Demyelination Syndrome in Patients Hospitalized with Hyponatremia](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215). _NEJM Evidence_ 2023 Apr;2(4):EVIDoa2200215
 - Seethapathy H _et al_, [Severe Hyponatremia Correction, Mortality, and Central Pontine Myelinolysis.](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2300107) _NEJM Evidence_ 2023 Oct;2(10):EVIDoa2300107
+- Adrogué HJ, Madias NE. [Hyponatremia.](https://www.nejm.org/doi/10.1056/NEJM200005253422107?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed) _NEJM_ 2000 May 25;342(21):1581-9
