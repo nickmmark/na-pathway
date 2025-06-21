@@ -18,7 +18,7 @@ We can estimate how an infusion/bolus will change the patients sodium using the 
 =
 \frac{[\mathrm{Na}]_{\text{infusate}}
       -[\mathrm{Na}]_{\text{serum}}
-     }{\mathrm{TBW}+{volume infused}}
+     }{\mathrm{TBW}+\mathrm{volume infused}}
 ```
 To use this we need to calculate the patients **Total Body Water (TBW)** which depends on age, gender, and weight. 
 - Children and adult males: 0.6 * body weight (in kg)
