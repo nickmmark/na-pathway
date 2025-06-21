@@ -12,6 +12,7 @@ Finally, the user can save the graph to disk, paste it into the medical record, 
 ![](https://github.com/nickmmark/hyponatremia-glideslope/blob/main/sodium_correction_v1.gif)
 
 ### Estimating the change in serum sodium
+```math
 \[
 \Delta[\mathrm{Na}]
 =
@@ -19,6 +20,7 @@ Finally, the user can save the graph to disk, paste it into the medical record, 
       -[\mathrm{Na}]_{\text{serum}}
      }{\mathrm{TBW}+1}
 \]
+```
 
 ### ⚙️ Implementation
 - Uses [luxon.js](https://moment.github.io/luxon/#/) for handling date/times and [chart.js](https://www.chartjs.org/docs/latest/charts/line.html) for displaying the results. It uses the Luxon [Chart.js adapter](https://github.com/chartjs/chartjs-adapter-luxon) for easy interoperability between the two.
