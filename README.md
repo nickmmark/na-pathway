@@ -1,16 +1,24 @@
 # NaPathway: A tool for safely correcting hyponatremia
 
-### 🏥 Medical Context
-Hyponatremia is a common but potentially serious electrolyte disturbance among hospitalized patients. Correcting hyponatremia too rapidly can lead to serious complications such as [Central pontine myelinolysis (CPM)](https://en.wikipedia.org/wiki/Central_pontine_myelinolysis) and Osmotic Demyelination Syndrome (ODS). Avoiding these complications requires careful monitoring and titration of therapies. One challenge is defining precise sodium correction goals and determining if the correction is occuring as intended. This is fundamentally a data visualization problem, that can be solved with an interactive web-app.
+### 🧠 Medical Context for Hyponatremia
+Severe hyponatremia (sodium < 120 mEq/L) is a potentially serious electrolyte disturbance among hospitalized patients. Correcting hyponatremia too rapidly can lead to serious neurologicla complications such as [Central pontine myelinolysis (CPM)](https://en.wikipedia.org/wiki/Central_pontine_myelinolysis) and Osmotic Demyelination Syndrome (ODS). Avoiding these complications requires careful monitoring and titration of therapies. One challenge is defining precise sodium correction goals and determining if the correction is occuring as intended, particularly in the context of multiple therapies being administered. This is fundamentally a data visualization problem, that can be solved with an interactive web-app.
 
 ### 📈 Solution
 The patient's sodium values are displayed in an xy plot versus time. The safe rate of correction is shown as a ***glideslope***. The user can add more sodium values and see if they within the safe rate of correction. Values outside the safe correction range are highlighted. 
 The user can use the default rate of sodium correction (6-8 mEq/L/day), a more cautious rate (4-6 mEq/L/day), a more aggressive rate (8-10 mEq/L/day), or even customize the rate.
-Once the user has built the visualization they can either review it via the web app, copy it to the clipboard (to paste into the EHR), or print it out.
-The user can also indicate when treatments such as D5W, Normal Saline, 3% saline, or ddAVP are administered. These are also shown on the graph.
-Finally, the user can paste the results graph into the medical record or print it out, so everyone on the team has shared mental model about the plan for safe sodium correction.
+The user can also indicate when treatments such as D5W, Normal Saline, 3% saline, or ddAVP are administered. These therapies are also shown on the graph. The app can also help the user estimate the effects of giving saline or free water.
+Finally, the user can save the graph to disk, paste it into the medical record, or print it out, so everyone on the medical team has shared mental model about the plan for safe sodium correction.
 
 ![](https://github.com/nickmmark/hyponatremia-glideslope/blob/main/sodium_correction_v1.gif)
+
+### Estimating the change in serum sodium
+\[
+\Delta[\mathrm{Na}]
+=
+\frac{[\mathrm{Na}]_{\text{infusate}}
+      -[\mathrm{Na}]_{\text{serum}}
+     }{\mathrm{TBW}+1}
+\]
 
 ### ⚙️ Implementation
 - Uses [luxon.js](https://moment.github.io/luxon/#/) for handling date/times and [chart.js](https://www.chartjs.org/docs/latest/charts/line.html) for displaying the results. It uses the Luxon [Chart.js adapter](https://github.com/chartjs/chartjs-adapter-luxon) for easy interoperability between the two.
