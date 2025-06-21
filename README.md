@@ -60,9 +60,13 @@ Practically, we can surface the ***expected change in sodium*** as a property of
 #### Sodium does not fully explain ODS risk
 Although the [original report of osmotic demyelination syndrome](https://www.nejm.org/doi/abs/10.1056/NEJM198606123142402) suggested that the cause was **rapid** correction of sodium (>12 mEq/L/day) more recent studies suggest that ODS can occur with slower rates of correction. In a [cohort described by Seethapathy _et al_](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2300107), CPM occured in 5 of 7 patients despite correcting sodiuma at a slower rate (<8 mEq/L/day).
 Even patients with relatively slow correction of hyponatremia can develop CPM/ODS. A larger [multi-center observational study by MacMillan et al](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215) found that 7/12 patients who developed CPM did not have rapid correction. Thus, extremely cautious rates of sodium correction (e.g. <6 mEq/L/day) may be warranted in high risk patients. 
+The NaPathway app allows users to choose a more cautious rate of correction for high risk patients. This is not a substitute for clinical judgement. 
 
 #### Changes in endogenous ADH can lead to over-correction
-Frequently, patient present with hyponatremia in the setting of high ***endogenous*** ADH levels (for example with hypovolemia). Following volume resuscitation, the endogenous ADH levels drop and the sodium can rise rapidly, potentially causing dangerously rapid overocorrection. For this reason ***exogenous*** ADH can be administered in the form of ddAVP to blunt the rapid rise in sodium when endogenous ADH falls. This apporach is termed the ***ddAVP clamp***. A good discussion of this approach can be found [here](https://emcrit.org/pulmcrit/taking-control-of-severe-hyponatremia-with-ddavp/).
+Frequently, patient present with hyponatremia in the setting of high ***endogenous*** ADH levels (for example with hypovolemia). Following volume resuscitation, the endogenous ADH levels drop and the sodium can rise rapidly, potentially causing dangerously rapid overocorrection. For this reason ***exogenous*** ADH can be administered in the form of ddAVP to blunt the rapid rise in sodium when endogenous ADH falls. This apporach is termed the ***ddAVP clamp***. A good discussion of this approach can be found [here](https://emcrit.org/pulmcrit/taking-control-of-severe-hyponatremia-with-ddavp/). The NaPathway app allows you to add ddAVP on the plot to see when it is working.
+
+#### Need for rapid initial correction
+In some circumstances (for example seizures), a rapid initial sodium correction is necessary. Typically the goal will be to rapidly increase sodium by 3-5 mEq/L, however the 24 hour correction goal remains unchanged. The current NaPathway app does not adjust the correction glideslope to account for this.
 
 <br><br>
 
