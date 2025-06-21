@@ -12,7 +12,7 @@ Finally, the user can save the graph to disk, paste it into the medical record, 
 
 ![](https://github.com/nickmmark/hyponatremia-glideslope/blob/main/sodium_correction_v1.gif)
 
-
+<br>
 
 ### 🧮 Calculating the expected change in sodium with IV fluids
 In order to calculate how an infusion or bolus will alter the patients serum sodium, we need to estimate their [**Total Body Water (TBW)**](https://en.wikipedia.org/wiki/Body_water). We can estimate TBW using:
@@ -45,11 +45,15 @@ Specifically to calculate the *expected change* in sodium, we use the patients T
 
 Practically, we can surface the ***expected change in sodium*** as a property of each infusion (as a tooltip on each therapy). Therefore if a patient is receiving multiple treatments we can see how *each* would be expected to change their serum sodium.
 
+<br><br>
+
 
 ### ⚙️ Implementation
 - Uses [luxon.js](https://moment.github.io/luxon/#/) for handling date/times and [chart.js](https://www.chartjs.org/docs/latest/charts/line.html) for displaying the results. It uses the Luxon [Chart.js adapter](https://github.com/chartjs/chartjs-adapter-luxon) for easy interoperability between the two.
 - Uses [the Asynchronous Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) for pasting and the [window.print function](https://developer.mozilla.org/en-US/docs/Web/API/Window/print) for printing or export to PDF.
 
+
+<br><br>
 
 
 ### ⚠️ Limitations
@@ -58,7 +62,9 @@ Although the [original report of osmotic demyelination syndrome](https://www.nej
 Even patients with relatively slow correction of hyponatremia can develop CPM/ODS. A larger [multi-center observational study by MacMillan et al](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215) found that 7/12 patients who developed CPM did not have rapid correction. Thus, extremely cautious rates of sodium correction (e.g. <6 mEq/L/day) may be warranted in high risk patients. 
 
 #### Changes in endogenous ADH can lead to over-correction
-Frequently, patient present with hyponatremia in the setting of high ***endogenous*** ADH levels (for example with hypovolemia). Following volume resuscitation, the endogenous ADH levels drop and the sodium can rise rapidly, potentially causing dangerously rapid overocorrection. For this reason ***exogenous*** ADH can be administered in the form of ddAVP to blunt the rapid rise in sodium when endogenous ADH falls. This apporach is termed the ***ddAVP clamp***.
+Frequently, patient present with hyponatremia in the setting of high ***endogenous*** ADH levels (for example with hypovolemia). Following volume resuscitation, the endogenous ADH levels drop and the sodium can rise rapidly, potentially causing dangerously rapid overocorrection. For this reason ***exogenous*** ADH can be administered in the form of ddAVP to blunt the rapid rise in sodium when endogenous ADH falls. This apporach is termed the ***ddAVP clamp***. A good discussion of this approach can be found [here](https://emcrit.org/pulmcrit/taking-control-of-severe-hyponatremia-with-ddavp/).
+
+<br><br>
 
 
 ### 🔢 Versions
@@ -66,6 +72,8 @@ Frequently, patient present with hyponatremia in the setting of high ***endogeno
 - 1.1 added ability to print, save, & copy the graph
 - 2.0 added basic therapies
 - 3.0 implemented calculations of TBW and expected change in serum sodium
+
+<br><br>
 
 
 ### 🚧 Features to Add
@@ -85,12 +93,13 @@ Frequently, patient present with hyponatremia in the setting of high ***endogeno
 - this could pull lots of additional data --> therapeutics given, urine output, other labs, etc
 - this is really where this app needs to go ultimately & why I've made it open source under an MIT license
 
+<br><br>
 
 
 ### 🪪 License
 NaPathway is released under an [MIT License](https://opensource.org/license/mit) - free to reuse (including commercially) but please acknowledge where you got it!
 
-
+<br><br>
 
 ### 📚 References
 - Sterns RH _et al_, [*Osmotic demyelination syndrome following correction of hyponatremia*](https://www.nejm.org/doi/abs/10.1056/NEJM198606123142402) _NEJM_ 1986 Jun 12;314(24):1535-42. - Original report of describing Osmotic Demyelination Syndrome
