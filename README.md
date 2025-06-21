@@ -15,23 +15,25 @@ Finally, the user can save the graph to disk, paste it into the medical record, 
 
 
 ### 🧮 Calculating the expected change in sodium with IV fluids
-In order to calculate how an infusion or bolus will alter the patients serum sodium, we need to estimate their **Total Body Water (TBW)**. We can estimate TBW using:
+In order to calculate how an infusion or bolus will alter the patients serum sodium, we need to estimate their [**Total Body Water (TBW)**](https://en.wikipedia.org/wiki/Body_water). We can estimate TBW using:
 ```math
 TBW = Mass(kg) x C
 ```
 
-The coefficient (C) depends on age, gender, and weight. 
+The coefficient (C) used to estimate TBW depends on age, gender, and weight:
 - Children and adult males: 0.6 * body weight (in kg)
 - Adult females and elderly males: 0.5 * body weight (in kg)
-- Elderly females: 0.45 * body weight (in kg) 
+- Elderly females: 0.45 * body weight (in kg)
 
-We also need to know the sodium content of different intravenous fluid solutions:
+(Note that there are more accurate anthropometric equations that use height, weight, age, and gender. I have chosen to use the simpler approximation because height data is not always available. Ideally, if this was connected to the EHR, the app would use the better formula if more information was available.)
+
+In order to calculate the **expected change in sodium**, we also need to consider the sodium content of different intravenous fluid solutions:
 - 0.9% saline = 154 mEq/L
 - 3% saline = 513 mEq/L
 - Lactated Ringers = 130 mEq/L
 - Dextrose 5% water (D5W) = 0 mEq/L
 
-Therefore to calculate the *expected change* in sodium, we use the patients TBW, most recent sodium value, and the sodium content of the infusate, using the following equation:
+Specifically to calculate the *expected change* in sodium, we use the patients TBW, most recent sodium value, and the sodium content of the infusate, using the following equation:
 
 ```math
 \Delta[\mathrm{Na}]
@@ -41,7 +43,7 @@ Therefore to calculate the *expected change* in sodium, we use the patients TBW,
      }{\mathrm{TBW}+\mathrm{volume_infused}}
 ```
 
-Practically, we can surface the ***expected change in sodium*** as a property of each infusion. Therefore if a patient is receiving multiple treatments we can see how each would be expected to change their serum sodium.
+Practically, we can surface the ***expected change in sodium*** as a property of each infusion (as a tooltip on each therapy). Therefore if a patient is receiving multiple treatments we can see how *each* would be expected to change their serum sodium.
 
 
 ### ⚙️ Implementation
