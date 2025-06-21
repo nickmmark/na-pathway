@@ -11,16 +11,20 @@ Finally, the user can save the graph to disk, paste it into the medical record, 
 
 ![](https://github.com/nickmmark/hyponatremia-glideslope/blob/main/sodium_correction_v1.gif)
 
-### Estimating the change in serum sodium
+### 🧮 Estimating the change in serum sodium with therapies
+We can estimate how an infusion/bolus will change the patients sodium using the following equation:
 ```math
-\[
 \Delta[\mathrm{Na}]
 =
 \frac{[\mathrm{Na}]_{\text{infusate}}
       -[\mathrm{Na}]_{\text{serum}}
      }{\mathrm{TBW}+1}
-\]
 ```
+To use this we need to calculate the patients **Total Body Water (TBW)** which depends on age, gender, and weight. 
+- Children and adult males: 0.6 * body weight (in kg)
+- Adult females and elderly males: 0.5 * body weight (in kg)
+- Elderly females: 0.45 * body weight (in kg) 
+
 
 ### ⚙️ Implementation
 - Uses [luxon.js](https://moment.github.io/luxon/#/) for handling date/times and [chart.js](https://www.chartjs.org/docs/latest/charts/line.html) for displaying the results. It uses the Luxon [Chart.js adapter](https://github.com/chartjs/chartjs-adapter-luxon) for easy interoperability between the two.
