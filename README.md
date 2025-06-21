@@ -23,7 +23,12 @@ We can estimate how an infusion/bolus will change the patients sodium using the 
       -[\mathrm{Na}]_{\text{serum}}
      }{\mathrm{TBW}+\mathrm{volume_infused}}
 ```
-To use this we need to calculate the patients **Total Body Water (TBW)** which depends on age, gender, and weight. 
+To use this we need to calculate the patients **Total Body Water (TBW)** which is defined as:
+```math
+TBW = Mass(kg) x C
+```
+
+The coefficient depends on age, gender, and weight. 
 - Children and adult males: 0.6 * body weight (in kg)
 - Adult females and elderly males: 0.5 * body weight (in kg)
 - Elderly females: 0.45 * body weight (in kg) 
@@ -57,6 +62,7 @@ Even patients with relatively slow correction of hyponatremia can develop CPM/OD
 
 ### 🚧 Features to Add
 [x] Add therapies (d5W, 3% NS, ddAVP, etc)
+
 [ ] Add more info about therapies on the graph, for example:
 - ideally I could add a weight based calculator to *estimate* how much a given free water bolus would be expected to decrease the sodium
 - when was ddAVP given --> show the expected half life of the drug
