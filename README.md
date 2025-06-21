@@ -64,6 +64,7 @@ Even patients with relatively slow correction of hyponatremia can develop CPM/OD
 - 2.0 added basic therapies
 
 
+<Br>
 
 ### 🚧 Features to Add
 [x] Add therapies (d5W, 3% NS, ddAVP, etc)
@@ -82,11 +83,12 @@ Even patients with relatively slow correction of hyponatremia can develop CPM/OD
 - this could pull lots of additional data --> therapeutics given, urine output, other labs, etc
 - this is really where this app needs to go ultimately & why I've made it open source under an MIT license
 
+<Br>
 
 
 ### 🪪 License
 NaPathway is released under an [MIT License](https://opensource.org/license/mit) - free to reuse (including commercially) but please acknowledge where you got it!
-
+<Br>
 
 ### 📚 References
 - Sterns RH _et al_, [*Osmotic demyelination syndrome following correction of hyponatremia*](https://www.nejm.org/doi/abs/10.1056/NEJM198606123142402) _NEJM_ 1986 Jun 12;314(24):1535-42. - Original report of describing Osmotic Demyelination Syndrome
