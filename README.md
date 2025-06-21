@@ -5,7 +5,7 @@ Severe hyponatremia (sodium < 120 mEq/L) is a potentially serious electrolyte di
 
 
 ### 📈 Solution
-The patient's sodium values are displayed in an xy plot versus time. The safe rate of correction is shown as a ***glideslope***. The user can add more sodium values and see if they within the safe rate of correction. Values outside the safe correction range are highlighted. 
+The patient's sodium values are displayed in an xy plot versus time. The safe rate of correction is shown as a ***glideslope***. The user can add more sodium values and see if they fall within the safe rate of correction. Values outside the safe correction range are highlighted. 
 The user can use the default rate of sodium correction (6-8 mEq/L/day), a more cautious rate (4-6 mEq/L/day), a more aggressive rate (8-10 mEq/L/day), or even customize the rate.
 The user can also indicate when treatments such as D5W, Normal Saline, 3% saline, or ddAVP are administered. These therapies are also shown on the graph. The app can also help the user estimate the effects of giving saline or free water.
 Finally, the user can save the graph to disk, paste it into the medical record, or print it out, so everyone on the medical team has shared mental model about the plan for safe sodium correction.
