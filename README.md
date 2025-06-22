@@ -14,6 +14,23 @@ Finally, the user can save the graph to disk, paste it into the medical record, 
 
 <br>
 
+### Features
+- Patient Information: Enter gender, age, and weight to auto-calculate total body water (TBW).
+- Correction Rate: Select or customize target sodium correction rate (mEq/L/day).
+- Sodium Measurements: Add time-stamped serum sodium values; see red flags when out of safe range.
+- Treatments Administered: Log boluses and infusions (0.9% NS, 3% NS, LR, D5W, ddAVP).
+  - Bolus ΔNa computed per distribution formula.
+  - Infusion ΔNa per hour calculated using the same distribution formula.
+- Dynamic Chart:
+  - Shaded blue zone representing allowable glideslope.
+  - Lines for minimum and maximum correction rates.
+  - Horizontal bars for treatments, color-coded.
+- Tooltips & Labels:
+  - Detailed tooltips showing expected ∆Na (mEq/L or mEq/L/hour).
+  - Concise on-graph labels to avoid clutter.
+- Export & Share: Copy graph to clipboard, save as PNG, or print for documentation.
+
+
 ### 🧮 Calculating the expected change in sodium with IV fluids
 In order to calculate how an infusion or bolus will alter the patients serum sodium, we need to estimate their [**Total Body Water (TBW)**](https://en.wikipedia.org/wiki/Body_water). We can estimate TBW using:
 ```math
