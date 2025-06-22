@@ -43,6 +43,34 @@ Specifically to calculate the *expected change* in sodium, we use the patients T
      }{\mathrm{TBW}+\mathrm{volume_infused}}
 ```
 
+It's slighty more complicated if we want to calculate the hourly change in sodium with continuous infusions. 
+
+Given:
+
+- \(\mathrm{TBW}\) = total body water (L)  
+- \([\mathrm{Na}]_{\mathrm{start}}\) = initial serum sodium (mEq/L)  
+- \([\mathrm{Na}]_{\mathrm{inf}}\) = sodium concentration of the infusate (mEq/L)  
+- \(\dot V\) = infusion rate (mL/hr)  
+- \(V_{\mathrm{hr}} = \dot V / 1000\) (L infused in one hour)  
+
+Then after one hour:
+
+```math
+\mathrm{NewNa}_{\mathrm{hr}}
+= \frac{[\mathrm{Na}]_{\mathrm{start}}\times \mathrm{TBW}
+       + [\mathrm{Na}]_{\mathrm{inf}}\times V_{\mathrm{hr}}}
+      {\mathrm{TBW} + V_{\mathrm{hr}}}
+```
+
+and the expected change per hour is
+
+```math
+\Delta[\mathrm{Na}]_{\mathrm{per\,hr}}
+= \mathrm{NewNa}_{\mathrm{hr}} \;-\; [\mathrm{Na}]_{\mathrm{start}}.
+```
+
+
+
 Practically, we can surface the ***expected change in sodium*** as a property of each infusion (as a tooltip on each therapy). Therefore if a patient is receiving multiple treatments we can see how *each* would be expected to change their serum sodium.
 
 <br><br>
