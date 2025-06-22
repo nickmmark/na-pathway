@@ -48,10 +48,10 @@ It's slighty more complicated if we want to calculate the hourly change in sodiu
 Given:
 
 - $TBW$ = total body water (L)  
-- ${Na}]_{start}$ = initial serum sodium (mEq/L)  
-- \([\mathrm{Na}]_{\mathrm{inf}}\) = sodium concentration of the infusate (mEq/L)  
-- \(\dot V\) = infusion rate (mL/hr)  
-- \(V_{\mathrm{hr}} = \dot V / 1000\) (L infused in one hour)  
+- ${Na}_{start}$ = initial serum sodium (mEq/L)  
+- ${Na}_{inf}$ = sodium concentration of the infusate (mEq/L)  
+- $\dot V\$ = infusion rate (mL/hr)  
+- ${V}_{hr}$ = $\dot{V} / 1000$ (L infused in one hour)  
 
 Then after one hour:
 
