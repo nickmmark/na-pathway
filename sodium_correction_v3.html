@@ -117,10 +117,12 @@
           plugins: {
             legend: { display: false },
             datalabels: { display: ctx => ctx.dataset.order===0&&ctx.dataIndex===0, anchor:'start', align:'bottom', formatter:(v,c)=>c.dataset.label },
-            tooltip: {
+            tooltip: { 
+                titleFont: { size: 14 },
+                bodyFont: { size: 14 },
               callbacks: {
                 label: ctx => {
-                  const lbl = ctx.dataset.label;
+                  const lbl = ctx.dataset.detail || ctx.dataset.label;
                   const y = ctx.parsed.y;
                   if (lbl==='Measured'){
                     const raw=ctx.raw;
@@ -165,28 +167,34 @@
           const dur=r.querySelector('.treatmentDuration');
           const rateEl=r.querySelector('.treatmentRate');
           const text=r.querySelector('.treatmentDose');
-          let label='',delta;
-          if(vol&&dur&&vol.value&&dur.value){
-            label=`${type} ${vol.value}ml over ${dur.value}m`;
-            const naCont=type.includes('0.9%')?154:type.includes('3%')?513:type.includes('LR')?130:0;
-            const volumeL=parseFloat(vol.value)/1000;
-            const startNa=start.val;
-            const newNa=(startNa*tbw+naCont*volumeL)/(tbw+volumeL);
-            delta=newNa-startNa;
-          } else if(rateEl&&rateEl.value){
-            label=`${type} ${rateEl.value} ml/hr`;
-          } else if(text&&text.value){
-            label=`${type} ${text.value}`;
+          let label='', detail='', delta;
+          if (vol && dur && vol.value && dur.value) {
+            // shortened on-graph label
+            label = `${type} ${vol.value} ml`;
+            // detailed tooltip label
+            detail = `${type} ${vol.value}ml over ${dur.value} minutes`;
+            const naCont = type.includes('0.9%') ? 154 : type.includes('3%') ? 513 : type.includes('LR') ? 130 : 0;
+            const volumeL = parseFloat(vol.value)/1000;
+            const startNa = start.val;
+            const newNa = (startNa*tbw + naCont*volumeL)/(tbw + volumeL);
+            delta = newNa - startNa;
+          } else if (rateEl && rateEl.value) {
+            label = `${type} ${rateEl.value} ml/hr`;
+            detail = label;
+          } else if (text && text.value) {
+            label = `${type} ${text.value}`;
+            detail = label;
           }
           const st=new Date(r.querySelector('.treatmentStart').value);
           const sp=new Date(r.querySelector('.treatmentStop').value);
-          return isNaN(st)||isNaN(sp)?null:{label,start:st,stop:sp,expectedDelta:delta};
-        }).filter(x=>x);
+          return isNaN(st)||isNaN(sp)?null:{label, detail, start:st, stop:sp, expectedDelta:delta};
+        }).filter(x=>x);(x=>x);
 
-        // Draw the treatment bars. Adjust the colors and offsets here
         const yMax=Math.max(start.val+15,...measured.map(m=>m.y));
         const colors=['green','orange','purple','teal','brown','magenta'];
-        const trtDs=trts.map((t,i)=>({label:t.label,type:'line',data:[{x:t.start,y:yMax-0.5-i*0.5},{x:t.stop,y:yMax-0.5-i*0.5}],borderColor:colors[i%colors.length],borderWidth:6,pointRadius:0,pointHitRadius:10,tension:0,order:0,expectedDelta:t.expectedDelta}));
+        const trtDs = trts.map((t, i) => ({
+          label: t.label,
+          detail: t.detail,type:'line',data:[{x:t.start,y:yMax-0.5-i*0.5},{x:t.stop,y:yMax-0.5-i*0.5}],borderColor:colors[i%colors.length],borderWidth:6,pointRadius:0,pointHitRadius:10,tension:0,order:0,expectedDelta:t.expectedDelta}));
 
         sodiumChart.data.datasets=[...trtDs,{label:'Max Rate',data:upper,borderColor:'blue',backgroundColor:'rgba(0,0,255,0.1)',fill:'+1',tension:0.1},{label:'Min Rate',data:lower,borderColor:'blue',backgroundColor:'rgba(0,0,255,0.1)',fill:false,tension:0.1},{label:'Measured',data:measured,borderColor:'black',fill:false,tension:0.1,pointBackgroundColor:c=>c.raw.outOfBounds?'red':'black',pointRadius:c=>c.raw.outOfBounds?6:3}];
         sodiumChart.options.scales.y.min=Math.min(start.val-5,...measured.map(m=>m.y));
@@ -196,17 +204,17 @@
         sodiumChart.update();
       }
 
-      // Add Measurement Row to table
+      // Add Measurement Row
       function addMeasurementRow(){
         const row=document.createElement('tr');
-        row.innerHTML=`<td><input type="number" class="sodiumVal" step="1.0"></td><td><input type="datetime-local" class="sodiumTime"></td><td><button class="btn-delete">Delete</button></td>`;
+        row.innerHTML=`<td><input type="number" class="sodiumVal" step="0.1"></td><td><input type="datetime-local" class="sodiumTime"></td><td><button class="btn-delete">Delete</button></td>`;
         row.querySelector('.btn-delete').addEventListener('click',()=>{row.remove();updateGraph();});
         row.querySelector('.sodiumVal').addEventListener('input',updateGraph);
         row.querySelector('.sodiumTime').addEventListener('input',updateGraph);
         sodiumBody.appendChild(row);
       }
 
-      // Add Treatment Row to table
+      // Add Treatment Row
       function addTreatmentRow(){
         const row=document.createElement('tr');
         row.innerHTML=`<td><select class="treatmentType"><option>0.9% NS bolus</option><option>0.9% NS infusion</option><option>3% NS bolus</option><option>3% NS infusion</option><option>D5W bolus</option><option>D5W infusion</option><option>LR bolus</option><option>LR infusion</option><option>ddAVP</option></select></td><td class="doseCell"><input type="text" class="treatmentDose" placeholder="Dose"></td><td><input type="datetime-local" class="treatmentStart"></td><td><input type="datetime-local" class="treatmentStop"></td><td><button class="btn-delete">Delete</button></td>`;
@@ -216,18 +224,36 @@
         const stopInput=row.querySelector('.treatmentStop');
         const deleteBtn=row.querySelector('.btn-delete');
         function configureDose(){
-          const val=typeSelect.value;
+          const val = typeSelect.value;
           if(val.includes('bolus')){
             doseCell.innerHTML='<input type="number" class="treatmentVolume" placeholder="Volume (ml)"><input type="number" class="treatmentDuration" placeholder="Minutes">';
-            const vol=doseCell.querySelector('.treatmentVolume');
-            const dur=doseCell.querySelector('.treatmentDuration');
-            function updateStop(){const mins=parseFloat(dur.value);const st=new Date(startInput.value);if(!isNaN(st.getTime())&&mins){const ns=new Date(st.getTime()+mins*60000);const p=n=>String(n).padStart(2,'0');stopInput.value=`${ns.getFullYear()}-${p(ns.getMonth()+1)}-${p(ns.getDate())}T${p(ns.getHours())}:${p(ns.getMinutes())}`;}};
+            const vol = doseCell.querySelector('.treatmentVolume');
+            const dur = doseCell.querySelector('.treatmentDuration');
+            function updateStop(){
+              const mins = parseFloat(dur.value);
+              const st = new Date(startInput.value);
+              if(!isNaN(st.getTime()) && mins){
+                const ns = new Date(st.getTime()+mins*60000);
+                const pad = n=>String(n).padStart(2,'0');
+                stopInput.value = `${ns.getFullYear()}-${pad(ns.getMonth()+1)}-${pad(ns.getDate())}T${pad(ns.getHours())}:${pad(ns.getMinutes())}`;
+              }
+            }
+            // wire events
             dur.addEventListener('input',updateStop);
             startInput.addEventListener('input',updateStop);
+            // update graph on dose/time change
+            vol.addEventListener('input',updateGraph);
+            dur.addEventListener('input',updateGraph);
+            startInput.addEventListener('input',updateGraph);
+            stopInput.addEventListener('input',updateGraph);
           } else if(val.includes('infusion')){
             doseCell.innerHTML='<input type="number" class="treatmentRate" placeholder="Rate (ml/hr)">';
+            const rateInput = doseCell.querySelector('.treatmentRate');
+            rateInput.addEventListener('input',updateGraph);
           } else {
             doseCell.innerHTML='<input type="text" class="treatmentDose" placeholder="Dose">';
+            const textDose = doseCell.querySelector('.treatmentDose');
+            textDose.addEventListener('input',updateGraph);
           }
         }
         typeSelect.addEventListener('change',configureDose);
@@ -235,6 +261,8 @@
         deleteBtn.addEventListener('click',()=>{row.remove();updateGraph();});
         row.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',updateGraph));
         treatmentBody.appendChild(row);
+        // redraw chart to include new treatment
+        updateGraph();
       }
 
       // Events
@@ -248,4 +276,5 @@
   </script>
 </body>
 </html>
+
 
