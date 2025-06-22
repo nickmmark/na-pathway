@@ -14,7 +14,7 @@ Finally, the user can save the graph to disk, paste it into the medical record, 
 
 <br><br>
 
-<details><summary>### ⚙️ Features</summary>
+### ⚙️ Features
 - Patient Information: Enter gender, age, and weight to auto-calculate total body water (TBW).
 - Correction Rate: Select or customize target sodium correction rate (mEq/L/day).
 - Sodium Measurements: Add time-stamped serum sodium values; see red flags when out of safe range.
@@ -29,7 +29,6 @@ Finally, the user can save the graph to disk, paste it into the medical record, 
   - Detailed tooltips showing expected ∆Na (mEq/L or mEq/L/hour).
   - Concise on-graph labels to avoid clutter.
 - Export & Share: Copy graph to clipboard, save as PNG, or print for documentation.
-</details>
 
 
 <br><br>
