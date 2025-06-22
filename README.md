@@ -98,6 +98,7 @@ Practically, we can surface the ***expected change in sodium*** as a property of
 - HTML/CSS/JavaScript for the UI and calculations
 - Uses [luxon.js](https://moment.github.io/luxon/#/) for handling date/times and [chart.js](https://www.chartjs.org/docs/latest/charts/line.html) for displaying the results. It uses the Luxon [Chart.js adapter](https://github.com/chartjs/chartjs-adapter-luxon) for easy interoperability between the two.
 - Uses [the Asynchronous Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) for pasting and the [window.print function](https://developer.mozilla.org/en-US/docs/Web/API/Window/print) for printing or export to PDF.
+- Event Listeners: Inputs and buttons trigger updateGraph() or calculateTBW() to dynamically update the UI.
 
 
 <br><br>
