@@ -47,7 +47,7 @@ It's slighty more complicated if we want to calculate the hourly change in sodiu
 
 Given:
 
-- TBW = total body water (L)  
+- $TBW$ = total body water (L)  
 - \([\mathrm{Na}]_{\mathrm{start}}\) = initial serum sodium (mEq/L)  
 - \([\mathrm{Na}]_{\mathrm{inf}}\) = sodium concentration of the infusate (mEq/L)  
 - \(\dot V\) = infusion rate (mL/hr)  
