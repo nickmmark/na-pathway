@@ -7,7 +7,7 @@ Severe hyponatremia (sodium < 120 mEq/L) is a potentially serious electrolyte di
 ### 📈 Solution
 The patient's sodium values are displayed in an xy plot versus time. The safe rate of correction is shown as a ***glideslope***. The user can add more sodium values and see if they fall within the safe rate of correction. Values outside the safe correction range are highlighted. 
 The user can use the default rate of sodium correction (6-8 mEq/L/day), a more cautious rate (4-6 mEq/L/day), a more aggressive rate (8-10 mEq/L/day), or even customize the rate.
-The user can also indicate when treatments such as D5W, Normal Saline, 3% saline, or ddAVP are administered. These therapies are also shown on the graph. The app can also help the user estimate the effects of giving saline or free water.
+The user can also indicate when treatments such as D5W, Normal Saline, 3% saline, or ddAVP are administered. These therapies are also shown on the graph. The app can also help the user estimate the effects of giving crystalloid or free water.
 Finally, the user can save the graph to disk, paste it into the medical record, or print it out, so everyone on the medical team has shared mental model about the plan for safe sodium correction.
 
 ![](https://github.com/nickmmark/hyponatremia-glideslope/blob/main/sodium_correction_v1.gif)
@@ -30,6 +30,7 @@ Note that there are more accurate anthropometric equations - like the [Watson Fo
 In order to calculate the **expected change in sodium**, we also need to consider the sodium content of different intravenous fluid solutions:
 - 0.9% saline = 154 mEq/L
 - 3% saline = 513 mEq/L
+- 5% saline = 856 mEq/L
 - Lactated Ringers = 130 mEq/L
 - Dextrose 5% water (D5W) = 0 mEq/L
 
@@ -88,13 +89,16 @@ Practically, we can surface the ***expected change in sodium*** as a property of
 #### Sodium does not fully explain ODS risk
 Although the [original report of osmotic demyelination syndrome](https://www.nejm.org/doi/abs/10.1056/NEJM198606123142402) suggested that the cause was **rapid** correction of sodium (>12 mEq/L/day) more recent studies suggest that ODS can occur with slower rates of correction. In a [cohort described by Seethapathy _et al_](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2300107), CPM occured in 5 of 7 patients despite correcting sodiuma at a slower rate (<8 mEq/L/day).
 Even patients with relatively slow correction of hyponatremia can develop CPM/ODS. A larger [multi-center observational study by MacMillan et al](https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200215) found that 7/12 patients who developed CPM did not have rapid correction. Thus, extremely cautious rates of sodium correction (e.g. <6 mEq/L/day) may be warranted in high risk patients. 
-The NaPathway app allows users to choose a more cautious rate of correction for high risk patients. This is not a substitute for clinical judgement. 
+The NaPathway app allows users to choose a more cautious rate of correction for high risk patients. This is not a substitute for clinical judgement.
 
 #### Changes in endogenous ADH can lead to over-correction
 Frequently, patient present with hyponatremia in the setting of high ***endogenous*** ADH levels (for example with hypovolemia). Following volume resuscitation, the endogenous ADH levels drop and the sodium can rise rapidly, potentially causing dangerously rapid overocorrection. For this reason ***exogenous*** ADH can be administered in the form of ddAVP to blunt the rapid rise in sodium when endogenous ADH falls. This apporach is termed the ***ddAVP clamp***. A good discussion of this approach can be found [here](https://emcrit.org/pulmcrit/taking-control-of-severe-hyponatremia-with-ddavp/). The NaPathway app allows you to add ddAVP on the plot to see when it is working.
 
 #### Need for rapid initial correction
 In some circumstances (for example seizures), a rapid initial sodium correction is necessary. Typically the goal will be to rapidly increase sodium by 3-5 mEq/L, however the 24 hour correction goal remains unchanged. The current NaPathway app does not adjust the correction glideslope to account for this.
+
+#### An app can't replace clincal judgement
+Perhaps most importantly, a data vizualization app isn't a substitute for clinical judgement. This app is intended to help experienced and trained clinicians combine the data together to make better informed decisions. It is not intended to tell clinicians what to do.
 
 <br><br>
 
@@ -104,6 +108,7 @@ In some circumstances (for example seizures), a rapid initial sodium correction 
 - 1.1 added ability to print, save, & copy the graph
 - 2.0 added basic therapies
 - 3.0 implemented calculations of TBW and expected change in serum sodium
+- 3.1 many bug fixes
 
 <br><br>
 
