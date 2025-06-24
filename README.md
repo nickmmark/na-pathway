@@ -94,6 +94,8 @@ and the expected change per hour is
 
 Practically, we can surface the ***expected change in sodium*** as a property of each infusion (as a tooltip on each therapy). Therefore if a patient is receiving multiple treatments we can see how *each* would be expected to change their serum sodium.
 
+![](https://github.com/nickmmark/na-pathway/blob/main/expected_response_therapy.png)
+
 <br><br>
 
 
