@@ -128,7 +128,7 @@ Frequently, patient present with hyponatremia in the setting of high ***endogeno
 In some circumstances (for example seizures), a rapid initial sodium correction is necessary. Typically the goal will be to rapidly increase sodium by 3-5 mEq/L, however the 24 hour correction goal remains unchanged. The current NaPathway app does not adjust the correction glideslope to account for this.
 
 #### An app can't replace clincal judgement
-Perhaps most importantly, a data vizualization app isn't a substitute for clinical judgement. This app is intended to help experienced and trained clinicians combine the data together to make better informed decisions. It is not intended to tell clinicians what to do.
+Perhaps most importantly, a data vizualization app isn't a substitute for clinical judgement. Context is important (what is the etiology of hyponatremia?) and there are many factors (ongoing free water intake, urinary losses, fluids in other medication infusion) that the app does not capture. The NaPathway app is intended to **help** ***experienced and trained clinicians*** combine the data together to make better informed decisions. It is not intended to tell clinicians what to do. Expert clinical judgement is still essential. Double check any calculation. Don't be stupid.
 
 <br><br>
 
