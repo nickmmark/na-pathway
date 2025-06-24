@@ -11,7 +11,8 @@ The user can also indicate when treatments such as D5W, Normal Saline, 3% saline
 Finally, the user can save the graph to disk, paste it into the medical record, or print it out, so everyone on the medical team has shared mental model about the plan for safe sodium correction.
 
 ![](https://github.com/nickmmark/hyponatremia-glideslope/blob/main/sodium_correction_v1.gif)
-_demonstration of the features of NaPathway_
+
+_demonstration of the features of **NaPathway**_
 
 <br><br>
 
@@ -32,7 +33,8 @@ _demonstration of the features of NaPathway_
 - Export & Share: Copy graph to clipboard, save as PNG, or print for documentation.
 
 ![](https://github.com/nickmmark/na-pathway/blob/main/Na_overcorrection_warning.png)
-_Example of a warning when sodium correction exceeds the safe rate_
+
+_Example of a warning when the rate of sodium correction exceeds the specified safe correction rate_
 
 <br><br>
 
@@ -98,7 +100,7 @@ and the expected change per hour is
 Practically, we can surface the ***expected change in sodium*** as a property of each infusion (as a tooltip on each therapy). Therefore if a patient is receiving multiple treatments we can see how *each* would be expected to change their serum sodium.
 
 ![](https://github.com/nickmmark/na-pathway/blob/main/expected_response_therapy.png)
-_NaPathway calculates the expected change in sodium with each therapy administered_
+_**NaPathway** calculates the expected change in sodium with each therapy administered_
 
 <br><br>
 
