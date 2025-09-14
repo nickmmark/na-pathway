@@ -16,6 +16,8 @@ _demonstration of the features of **NaPathway**_
 
 <br><br>
 
+Try it out [here](https://nickmmark.github.io/na-pathway/).
+
 ### ⚙️ Features
 - Patient Information: Enter gender, age, and weight to auto-calculate total body water (TBW).
 - Correction Rate: Select or customize target sodium correction rate (mEq/L/day).
